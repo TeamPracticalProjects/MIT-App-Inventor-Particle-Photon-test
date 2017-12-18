@@ -19,10 +19,11 @@ As of this release, the following items work:
 - the LED ON and LED OFF buttons send commands to the Photon to turn the LED on and off, respectively.
 - the slider sets its value into a text box (Command), overwriting any value in it.
 - pressing the SET button sends the number in the text box (Command) to the Photon to move the servo.
-- the web response text box displays the complete return string from any cloud function call.
+- the web response text box displays the Particle.function() return value only.
 
 The following additional work is planned:
-- parse and process the function return strings
-- use the function return strings from LED on and off to color the LED on/off buttons appropriately.
-- filter the slider (somehow) so that the servo does not jump around while thumbing the slider.
-- use the function return string from the servo poitioning to display only the current servo position angle.
+- separate LED ON/OFF from Servo position posts to process responses separately..
+- use the function return value from LED on and off to color the LED on/off buttons appropriately..
+- clean up procedures calls to get rid of globals and use arguments instead.
+- process a file(s) with a list picker to select the device to use (i.e. device ID and access token are in file(s)
+    and not hardcoded).
