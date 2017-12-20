@@ -13,7 +13,9 @@
         if it is withing range or to the MAX or MIN clamp limits.  The furntion returns the
         angle that is actually sent to the servo.
         
-    When the program is successfully loaded and running,t he D7 LED will flash with a 1 second period.
+    When the program is successfully loaded and running, the D7 LED will flash with a 1 second period.
+    
+    Version 1.0, 12/19/2017; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
         
 */
 
@@ -23,6 +25,9 @@ const int SERVO_PIN = A5;
 const int BLINK_TIME = 500;
 const int SERVO_MAX = 175;
 const int SERVO_MIN = 5;
+const String version = "firmware version 1.0; last reset at:";
+
+String message = version + Time.timeStr() + "Z\n";
 
 Servo myServo;
 
@@ -38,6 +43,7 @@ void setup() {
     
     Particle.function("on-off", ledRemote);
     Particle.function("move", servoRemote);
+    Particle.variable("message", message);
     
 }
 
