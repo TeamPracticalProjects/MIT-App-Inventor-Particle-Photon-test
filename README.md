@@ -1,5 +1,5 @@
 # MIT-App-Inventor-Particle-Photon-test
-Hardware and software to learn to develop apps on MIT app inventor to interact with a Photon over the Internet.
+##Hardware and software to learn to develop apps on MIT app inventor to interact with a Photon over the Internet.
 
 The hardware for this app uses the WLD (https://github.com/TeamPracticalProjects/WaterLeakSensor) 
 backlit pushbutton and servo for testing out apps developed with MIT appinventor 2, albeit an LED on pin D5 
@@ -22,12 +22,12 @@ A String variable ("message") on the Photon is exposed to the cloud.  This varia
 firmware version and the last reset time (in UTC) for the device.  The app reads this variable at startup and displays a notification 
 dialog to the user to verify that the Photon is on-line and running the expected version of the firmware.
 
-The following additional work is planned:
-- process a file(s) on the phone with a list picker to select the device to use (i.e. device ID and access token are in file(s)
-    and not hardcoded).
-- Change the opening notification.  Wait for the user to select the device and then perform a cloud query to Particle to see if 
-    the device is on line or not and notify the user accordingly.
-- (TBD) create an app to remotely (REST) login to the Particle cloud and obtain the user's access token and a list of the user's
-    devices (device name, firmware running on it, deviceID) and store this in a file on the phone that apps such as this one
-    can user for the user to select the device to use without hardcoding access tokens and device IDs into apps like this one.
+This project will soon be integrated with the Particle App Template at:
+https://github.com/TeamPracticalProjects/Particle_App_Template
 
+All materials contained in this repository are (c) 2018 by Bob Glicksman,
+Jim Schrempp and Team Practical Projects and are distributed freely under
+an open source, non-commercial license, see: https://creativecommons.org/licenses/by-nc/4.0/
+
+Enjoy,
+Team Practical Projects
