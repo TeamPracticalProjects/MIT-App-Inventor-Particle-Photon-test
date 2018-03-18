@@ -10,7 +10,7 @@ There are two subfolders in this repository:
 This folder contains source code (.aia file) only for a version of this app that is not integrated with our template.  This version is provided because it is easy to read and understand how to call Particle cloud functions and read Particle cloud variables from MIT app inventor code.  You load the ParticleTest.aia file into MIT app inventor 2 in order to work with the app.  This is a source code file and you must
 enter your device ID and access token where indicated in order to communicate with your Photon.  A description of the design is also provided in this folder.
 ### Deployable App:
-This folder contains source code (.aia file) and the compile code (.apk file) for a version of this app that is integrated with our template (see: https://github.com/TeamPracticalProjects/Particle_App_Template). This verison of the app allows the user to log in to their Particle account and select the device to use with the app.  There is no need to hardcode the user access_token or the deviceID.  
+This folder contains source code (.aia file) and the compiled app (.apk file) for a version of this app that is integrated with our template (see: https://github.com/TeamPracticalProjects/Particle_App_Template). This verison of the app allows the user to log in to their Particle account and select the device to use with the app.  There is no need to hardcode the user access_token or the deviceID.  
 
 This folder contains two subfolders.  The /src folder contains the complete source code file (.aia).  The /compiled folder contains a deployable (.apk) file that you can upload to your Android device and install directly, without the need to compile anything in MIT app inventor.
 
