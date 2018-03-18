@@ -1,18 +1,18 @@
 # MIT-App-Inventor-Particle-Photon-test
-##Hardware and software to learn to develop apps on MIT app inventor to interact with a Photon over the Internet.
+## Hardware and software to learn to develop apps on MIT app inventor to interact with a Photon over the Internet.
 
 The hardware for this app uses the WLD (https://github.com/TeamPracticalProjects/WaterLeakSensor) 
 backlit pushbutton and servo for testing out apps developed with MIT appinventor 2, albeit an LED on pin D5 
 and a servo on pin A5 are all that are needed for this testing. The Test_MIT.ino file is flashed to the Photon for testing.  
 
 There are two subfolders in this repository:
-###Standalone App:  
+### Standalone App:  
 This folder contains source code (.aia file) only for a version of this app that is not integrated with our template.  This version is provided because it is easy to read and understand how to call Particle cloud functions and read Particle cloud variables from MIT app inventor code.  You load the ParticleTest.aia file into MIT app inventor 2 in order to work with the app.  This is a source code file and you must
 enter your device ID and access token where indicated in order to communicate with your Photon.  A description of the design is also provided in this folder.
-##Deployable App:
+## Deployable App:
 This folder contains two subfolders.  The /src folder contains the complete source code file (.aia).  The /compiled folder contains a deployable (.apk) file that you can upload to your Android device and install directly, without the need to compile anything in MIT app inventor.
 
-###App Description:
+### App Description:
 The app has three buttons. A pair of buttons is used to turn the Photon D5 LED ON and OFF. 
 The return value from the Particle web function "on-off" causes the appropriate button to turn green and 
 the other button to turn white, indicating the actual state of the LED connected to the Photon.  This demonstrates how to call a 
