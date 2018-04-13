@@ -18,7 +18,7 @@
         
     When the program is successfully loaded and running, the D7 LED will flash with a 1 second period.
     
-    Version 2.0, 4/13/2018; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
+    Version 2.1, 4/13/2018; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
         
 */
 
@@ -54,11 +54,18 @@ void setup() {
 
 void loop() {
 
+    static int messNum = 0;  // message number for testing publication
+    
     blinkLED(BLINK_TIME);  // blink the D7 LED to say all is running OK
     
-    // publish buttin press event
+    // publish button press event with name and incrementing value < 12
     if(readPushButton() == true) {
-        Particle.publish("button pressed!");
+        if (messNum > 10) {
+            messNum = 0;
+        } else {
+            messNum++;
+        }
+        Particle.publish("button pressed!", String(messNum));
     }
     
     
