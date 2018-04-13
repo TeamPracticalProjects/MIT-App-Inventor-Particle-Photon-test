@@ -2,7 +2,7 @@
 ## Hardware and software to learn to develop apps on MIT app inventor to interact with a Photon over the Internet.
 
 The hardware for this app uses the WLD (https://github.com/TeamPracticalProjects/WaterLeakSensor) 
-backlit pushbutton and servo for testing out apps developed with MIT appinventor 2, albeit an LED on pin D5, momentary pushbutton in pin D4, 
+backlit pushbutton and servo for testing out apps developed with MIT appinventor 2, albeit an LED on pin D5, momentary pushbutton on pin D4, 
 and a servo on pin A5 are all that are needed for this testing. The Test_MIT.ino file is flashed to the Photon for testing.  
 
 There are two subfolders in this repository:
