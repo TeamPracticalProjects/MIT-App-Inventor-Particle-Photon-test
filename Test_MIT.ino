@@ -13,14 +13,18 @@
         if it is withing range or to the MAX or MIN clamp limits.  The furntion returns the
         angle that is actually sent to the servo.
         
+    This program also processes a momentary pushbutton on pin D4.  It publishes a button press event
+    to the Particle cloud, for testing mobile app notifications.
+        
     When the program is successfully loaded and running, the D7 LED will flash with a 1 second period.
     
-    Version 1.0, 12/19/2017; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
+    Version 2.0, 4/13/2018; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
         
 */
 
 const int LED_PIN = D7;
 const int INDICATOR_PIN = D5;
+const int BUTTON_PIN = D4;
 const int SERVO_PIN = A5;
 const int BLINK_TIME = 500;
 const int SERVO_MAX = 175;
@@ -36,6 +40,7 @@ void setup() {
     pinMode(LED_PIN, OUTPUT);
     pinMode(INDICATOR_PIN, OUTPUT);
     pinMode(SERVO_PIN, OUTPUT);
+    pinMode(BUTTON_PIN, INPUT_PULLUP);
     myServo.attach(SERVO_PIN);
     
     digitalWrite(LED_PIN, LOW);
@@ -49,14 +54,21 @@ void setup() {
 
 void loop() {
 
-    blinkLED(BLINK_TIME);
+    blinkLED(BLINK_TIME);  // blink the D7 LED to say all is running OK
+    
+    // publish buttin press event
+    if(readPushButton() == true) {
+        Particle.publish("button pressed!");
+    }
+    
+    
 }
 
 void blinkLED(int time) {
     static bool ledState = false;
     static unsigned long lastTime = millis();
     
-    if( (millis() - lastTime) >= time) {
+    if( diff(millis(), lastTime) >= time) {
         ledState = !ledState;
         lastTime = millis();
     }
@@ -68,7 +80,68 @@ void blinkLED(int time) {
     }
     
     return;
-}
+} // end of blinkLED
+
+boolean readPushButton() {
+    const unsigned long DEBOUNCE_TIME = 10;  // 10 milliseconds
+
+    // state variable states
+    const byte OFF = 0;
+    const byte DEBOUNCING = 1;
+    const byte DEBOUNCED = 2;
+
+    static byte lastState = OFF;
+    static unsigned long beginTime;
+
+    if(digitalRead(BUTTON_PIN) == LOW) {  // button has been pressed
+        switch (lastState) {
+            case OFF:       // new button press
+                beginTime = millis();
+                lastState = DEBOUNCING;
+                return false;
+                break;
+            case DEBOUNCING:    // wait until debouncing time is over
+                if(diff(millis(), beginTime) < DEBOUNCE_TIME) {
+                    return false;
+                } else {
+                    lastState = DEBOUNCED;
+                    return true;
+                }
+                break;
+            case DEBOUNCED:     // stay in this state until button is released
+                return false;
+                break;
+            default:
+                return false;
+        }
+
+    } else {        // the button has been released
+        lastState = OFF;
+        return false;
+    }
+}  // end of readPushButton
+
+
+/* diff(): function to measure time differences using millis() that corrects for millis() overflow.
+    paramters:
+        current - the current time value from millis(), as unsigned long
+        last - the previous time value from millis(), as unsigned long
+    return:
+        the difference between current and last, as unsigned long
+*/
+unsigned long diff(unsigned long current, unsigned long last)  {
+    const unsigned long MAX = 0xffffffff;  // an unsigned long is 4 bytes
+    unsigned long difference;
+
+    if (current < last) {       // overflow condition
+        difference = (MAX - last) + current;
+    } else {
+        difference = current - last;
+    }
+    return difference;
+}  // end of diff()
+
+
 
 // remote control functions
 
