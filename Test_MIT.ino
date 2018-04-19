@@ -18,7 +18,7 @@
         
     When the program is successfully loaded and running, the D7 LED will flash with a 1 second period.
     
-    Version 2.2, 4/15/2018; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
+    Version 2.1, 4/13/2018; (c) 2017, 2018 Bob Glicksman and Team Practical Projects
         
 */
 
@@ -29,7 +29,7 @@ const int SERVO_PIN = A5;
 const int BLINK_TIME = 500;
 const int SERVO_MAX = 175;
 const int SERVO_MIN = 5;
-const String version = "firmware version 2.2; last reset at:";
+const String version = "firmware version 1.0; last reset at:";
 
 String message = version + Time.timeStr() + "Z\n";
 
@@ -65,7 +65,7 @@ void loop() {
         } else {
             messNum++;
         }
-        Particle.publish("Alert_Test", String(messNum), PRIVATE);
+        Particle.publish("button pressed!", String(messNum));
     }
     
     
