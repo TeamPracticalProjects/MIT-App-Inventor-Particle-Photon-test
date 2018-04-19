@@ -32,7 +32,7 @@ either by typing the number into it or by using the slider adjacent to it. The t
 servo position using the return value from the "move" web function call to the Photon.
 
 A String variable ("message") on the Photon is exposed to the cloud.  This variable contains information about the 
-firmware version and the last reset time (in UTC) for the device.  The app reads this variable at startup and displays its content.  This feature works slightly differently on the standalone app and on the template integrated version.  On the standalone version, a notification dialog box pops up with the information from the device as well as the Particle web call response code so that the user knows that the device was communicated with properly.  On the integrated version, the template code provides the necessary information about the device being online, so the device provided status information is displayed near the bottom of the screen.
+firmware version and the last reset time (in UTC) for the device.  The app reads this variable at startup and displays its content.  This feature works slightly differently on the standalone app and on the template integrated version.  On the standalone version, a notification dialog box pops up with the information from the device as well as the paticle web call response code so that the user knows that the device was communicated with properly.  On the integrated version, the template code provides the necessary information about the device being online, so the device provided status information is displayed near the bottom of the screen.
 
 For more information about the Particle App Template, please see:
 https://github.com/TeamPracticalProjects/Particle_App_Template

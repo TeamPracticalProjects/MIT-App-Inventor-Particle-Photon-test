@@ -29,7 +29,7 @@ const int SERVO_PIN = A5;
 const int BLINK_TIME = 500;
 const int SERVO_MAX = 175;
 const int SERVO_MIN = 5;
-const String version = "firmware version 1.0; last reset at:";
+const String version = "firmware version 2.2; last reset at:";
 
 String message = version + Time.timeStr() + "Z\n";
 
