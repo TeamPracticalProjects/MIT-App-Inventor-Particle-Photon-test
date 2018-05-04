@@ -10,9 +10,9 @@ This repository contains sample app code (MIT App Inventor 2) to obtain data fro
 
 This repository contains the following directories:
 ### Documentation:
-This directory contains two files:  An Installation and User Manual and a description of the MIT App Inventor 2 source code that integrates with our template and can obtain cloud variable information from your Particle device and can call cloud functions on your Particle device.
+This directory contains two files:  An Installation and User Manual and a technical description of the MIT App Inventor 2 source code that integrates with our template and can obtain cloud variable information from your Particle device and can call cloud functions on your Particle device.
 
-### Particle Firmware:
+### Particle Firmware/src:
 This directory contains source code that you can upload to the Particle Web IDE, compile there, and flash to your Particle device (Photon or Electron).  This firmware works with the MIT App Inventor 2 software (“CommunicateWithParticleDemoApp.apk” app) to demonstrate the functionality.  
 
 ### Software_MIT_App_Inventor/Deployable App:
