@@ -1,5 +1,5 @@
 # MIT-App-Inventor-Particle-Photon-test
-## Hardware and software to learn to develop apps on MIT App Inventor 2 to interact with a Photon or Electron over the Internet.
+## Hardware and software to learn to develop apps on MIT App Inventor 2 to interact with a Particle Photon or Electron over the Internet.
 
 The hardware for this app uses the WLD (https://github.com/TeamPracticalProjects/WaterLeakSensor) 
 backlit pushbutton and servo for testing out apps developed with MIT App Inventor 2, albeit an LED on pin D5, momentary pushbutton on pin D4, 
